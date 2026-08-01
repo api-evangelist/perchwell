@@ -1,0 +1,79 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.perchwell.com
+docs: https://docs.perchwell.com
+summary: >-
+  Cross-cutting request/response semantics for Perchwell's three real estate
+  data APIs (JSON API, RESO Web API / OData 4.01, and legacy RETS 1.7).
+authentication:
+  style: token
+  transport: Authorization header
+  detail: >-
+    JSON API sends the raw token; RESO Web API uses a Bearer token; RETS sends
+    the token in the Authorization header. See authentication/perchwell-authentication.yml.
+idempotency:
+  supported: false
+  notes: >-
+    No dedicated idempotency-key header is documented. RESO Web API writes are
+    naturally idempotent for updates by key (PATCH to Property('{id}')/
+    Member('{id}')/OpenHouse('{id}')) and for entity references (providing an
+    existing MediaKey updates in place rather than duplicating), but there is no
+    request-level idempotency-key contract.
+pagination:
+  json_api:
+    style: page-number
+    params: [page, page_size]
+    page_size_default: 200
+    page_size_max: 200
+    response_fields: [total]
+  reso_web_api:
+    style: odata-offset
+    params: ['$top', '$skip']
+    top_default: 10
+    top_max: 200
+    response_fields: ['@odata.count']
+    notes: Client must paginate when $filter matches more than 200 records.
+  rets_api:
+    style: offset-limit
+    params: [Limit, Offset]
+query:
+  reso_web_api:
+    language: OData 4.01 $filter
+    operators: [eq, ne, gt, ge, lt, le, and, or, not]
+    functions: [contains, endswith, startswith, tolower, toupper]
+    select: '$select (comma-separated field list)'
+  rets_api:
+    language: DMQL2
+    metadata_transaction: GetMetadata
+  json_api:
+    filters: [listing_type, listing_status, updated_since, updated_before]
+incremental_sync:
+  json_api: updated_since / updated_before (ISO 8601)
+  reso_web_api: $filter=ModificationTimestamp ge <ISO 8601>
+  rets_api: DMQL2 UpdatedAt range query; recommended 30-minute import interval
+versioning:
+  reso_web_api:
+    scheme: uri-path
+    current: v2
+    path: /api/v2/OData/{system}
+  rets_api:
+    scheme: spec-version
+    version: RETS 1.7
+error_envelope:
+  reso_web_api: OData JSON responses; standard HTTP status codes (200/201/204).
+  rets_api: RETS XML envelope with ReplyCode and ReplyText attributes.
+  json_api: HTTP status codes with JSON body.
+media:
+  reso_web_api:
+    nested_in: Property
+    max_per_property: 100
+    behavior: >-
+      Media is a full representation of the Property's media on PATCH; omitted
+      existing MediaKeys are removed, new objects without MediaKey are created.
+delete:
+  reso_web_api: Only OpenHouse and Media entities may be deleted (DELETE).
+cross_links:
+  authentication: authentication/perchwell-authentication.yml
+  errors: errors/perchwell-problem-types.yml
+  lifecycle: lifecycle/perchwell-lifecycle.yml
+  data_model: data-model/perchwell-data-model.yml

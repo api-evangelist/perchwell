@@ -1,0 +1,16 @@
+generated: '2026-07-20'
+method: generated
+source: openapi/perchwell-reso-web-api-openapi.yml, openapi/perchwell-json-api-openapi.yml
+skills:
+- file: perchwell-sync-listings.md
+  name: Sync real estate listings from Perchwell
+  api: openapi/perchwell-json-api-openapi.yml
+  operations: [listListings]
+- file: perchwell-search-reso-property.md
+  name: Search and read RESO Property records
+  api: openapi/perchwell-reso-web-api-openapi.yml
+  operations: [getMetadata, queryProperty, getProperty]
+- file: perchwell-publish-listing.md
+  name: Publish a listing to the RESO Web API
+  api: openapi/perchwell-reso-web-api-openapi.yml
+  operations: [createMember, createProperty, updateProperty]

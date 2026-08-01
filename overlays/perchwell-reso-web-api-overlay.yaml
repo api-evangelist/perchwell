@@ -1,0 +1,12 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Perchwell RESO Web API
+  version: 1.0.0
+extends: openapi/perchwell-reso-web-api-openapi.yml
+actions:
+- target: $.info
+  update:
+    x-apievangelist-enriched: true
+    x-api-category: real-estate-data
+    x-standards: [reso-web-api-1.0.3, reso-data-dictionary, odata-4.01]
+    x-soc2: true

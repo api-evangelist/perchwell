@@ -1,0 +1,35 @@
+generated: '2026-07-20'
+method: searched
+source: https://perchwell.com/llms.txt
+docs: https://docs.perchwell.com
+standards:
+- id: reso-web-api
+  conforms: true
+  version: v1.0.3
+  evidence: >-
+    RESO Data Dictionary Certified Member; RESO-certified Web API built on the
+    RESO Web API v1.0.3 specification (docs.perchwell.com reso_getting_started).
+- id: reso-data-dictionary
+  conforms: true
+  evidence: RESO Data Dictionary certified; standard Property/Member/Office/Media/OpenHouse resources.
+- id: odata-4.01
+  conforms: true
+  evidence: RESO Web API is an OData 4.01 service ($metadata, $filter, $top, $skip, $select).
+- id: rets-1.7
+  conforms: true
+  evidence: Operates a RETS 1.7 server (DMQL2, Search/GetMetadata transactions) for compatibility.
+- id: soc2
+  conforms: true
+  evidence: SOC 2 compliant (stated on perchwell.com/llms.txt).
+- id: oauth2
+  conforms: false
+  evidence: Uses simple token authentication, not OAuth 2.0.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: No application/problem+json error envelope documented.
+compliance:
+  certifications:
+  - SOC 2
+  - RESO Web API Certified
+  - RESO Data Dictionary Certified
+  published: https://perchwell.com

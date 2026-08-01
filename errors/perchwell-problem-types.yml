@@ -1,0 +1,42 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/perchwell-reso-web-api-openapi.yml
+format: http-status
+docs: https://docs.perchwell.com
+notes: >-
+  Perchwell does not publish a formal error-code catalog or an
+  application/problem+json (RFC 9457) envelope. These entries are derived from
+  the HTTP status codes and validation behaviors documented in the API
+  reference, plus the RETS XML ReplyCode/ReplyText envelope.
+problems:
+- status: 200
+  title: OK
+  meaning: Successful query or update.
+  source_operation: openapi/perchwell-reso-web-api-openapi.yml#queryProperty
+- status: 201
+  title: Created
+  meaning: Entity created (POST to a RESO resource).
+  source_operation: openapi/perchwell-reso-web-api-openapi.yml#createMember
+- status: 204
+  title: No Content
+  meaning: Entity deleted (DELETE OpenHouse or Media).
+  source_operation: openapi/perchwell-reso-web-api-openapi.yml#deleteMedia
+- status: 400
+  title: Validation error
+  meaning: >-
+    Submitted values violate RESO Data Dictionary type/length/lookup
+    constraints, a required field is missing or set to null/empty, or a
+    conditionally-required field (e.g. ClosePrice when StandardStatus is
+    Closed) is absent. On PATCH with nested Media, if any Media record fails
+    validation the entire Property update is rejected.
+  remediation: Correct field types and required/conditionally-required values; retry.
+- status: 401
+  title: Unauthorized
+  meaning: Missing or invalid Authorization token.
+  remediation: Contact support@perchwell.com for valid credentials.
+rets_envelope:
+  format: RETS XML
+  fields:
+  - ReplyCode
+  - ReplyText
+  example: '<RETS ReplyCode="0" ReplyText="Operation successful">'

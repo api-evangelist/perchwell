@@ -1,0 +1,26 @@
+{
+  "provider": "perchwell",
+  "sources": [
+    "perchwell-listings-api-openapi.yml",
+    "perchwell-media-api-openapi.yml",
+    "perchwell-member-api-openapi.yml",
+    "perchwell-metadata-api-openapi.yml",
+    "perchwell-office-api-openapi.yml",
+    "perchwell-openhouse-api-openapi.yml",
+    "perchwell-property-api-openapi.yml"
+  ],
+  "outputs": [
+    "perchwell-listings-api-openapi.yml",
+    "perchwell-media-api-openapi.yml",
+    "perchwell-member-api-openapi.yml",
+    "perchwell-metadata-api-openapi.yml",
+    "perchwell-office-api-openapi.yml",
+    "perchwell-openhouse-api-openapi.yml",
+    "perchwell-property-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

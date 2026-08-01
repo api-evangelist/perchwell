@@ -1,0 +1,36 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.perchwell.com/#/reso_getting_started
+docs: https://docs.perchwell.com
+summary:
+  types: [apiKey, http]
+  api_key_in: [header]
+  oauth2_flows: []
+  notes: >-
+    All three Perchwell APIs use simple token authentication via the
+    Authorization header. The JSON API sends the raw token
+    (Authorization: {token}); the RESO Web API uses a Bearer token
+    (Authorization: Bearer {token}); the RETS API sends the token in the
+    Authorization header on Login/Search/GetMetadata transactions. There is no
+    OAuth 2.0 authorization server, so there is no scope surface. Credentials
+    are issued by Perchwell support (support@perchwell.com).
+schemes:
+- name: tokenAuth
+  type: apiKey
+  in: header
+  parameter_name: Authorization
+  description: JSON API simple token authentication (raw token in the Authorization header).
+  sources: [openapi/perchwell-json-api-openapi.yml]
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  description: RESO Web API token authentication (Authorization Bearer header).
+  sources: [openapi/perchwell-reso-web-api-openapi.yml]
+- name: retsToken
+  type: apiKey
+  in: header
+  parameter_name: Authorization
+  description: >-
+    RETS 1.7 server token authentication (Authorization header on Login, Search,
+    Logout, and GetMetadata transactions at http://rets.perchwell.com:6103).
+  sources: [https://docs.perchwell.com/#/rets_getting_started]

@@ -1,0 +1,64 @@
+generated: '2026-07-20'
+method: derived
+status: candidate
+source: openapi/perchwell-reso-web-api-openapi.yml, openapi/perchwell-json-api-openapi.yml
+description: >-
+  Candidate MCP tool list derived from Perchwell's documented API operations.
+  Perchwell does not publish an official hosted MCP server; this is a proposed
+  surface (one tool per operation) for making the real estate data APIs
+  agent-accessible.
+server:
+  name: perchwell
+  transport: http
+tools:
+- name: list_listings
+  description: List listings for an account feed (JSON API), filtered by type/status/date.
+  source_operation: openapi/perchwell-json-api-openapi.yml#listListings
+- name: get_reso_metadata
+  description: Get RESO Web API OData $metadata document.
+  source_operation: openapi/perchwell-reso-web-api-openapi.yml#getMetadata
+- name: query_property
+  description: Query RESO Property records with an OData $filter.
+  source_operation: openapi/perchwell-reso-web-api-openapi.yml#queryProperty
+- name: get_property
+  description: Get a RESO Property by ListingKey.
+  source_operation: openapi/perchwell-reso-web-api-openapi.yml#getProperty
+- name: create_property
+  description: Create a RESO Property record.
+  source_operation: openapi/perchwell-reso-web-api-openapi.yml#createProperty
+- name: update_property
+  description: Update a RESO Property by ListingKey.
+  source_operation: openapi/perchwell-reso-web-api-openapi.yml#updateProperty
+- name: query_member
+  description: Query RESO Member (agent) records.
+  source_operation: openapi/perchwell-reso-web-api-openapi.yml#queryMember
+- name: get_member
+  description: Get a RESO Member by MemberKey.
+  source_operation: openapi/perchwell-reso-web-api-openapi.yml#getMember
+- name: create_member
+  description: Create a RESO Member record.
+  source_operation: openapi/perchwell-reso-web-api-openapi.yml#createMember
+- name: update_member
+  description: Update a RESO Member by MemberKey.
+  source_operation: openapi/perchwell-reso-web-api-openapi.yml#updateMember
+- name: query_office
+  description: Query RESO Office records.
+  source_operation: openapi/perchwell-reso-web-api-openapi.yml#queryOffice
+- name: get_office
+  description: Get a RESO Office by OfficeKey.
+  source_operation: openapi/perchwell-reso-web-api-openapi.yml#getOffice
+- name: query_open_house
+  description: Query RESO OpenHouse records.
+  source_operation: openapi/perchwell-reso-web-api-openapi.yml#queryOpenHouse
+- name: create_open_house
+  description: Create a RESO OpenHouse record.
+  source_operation: openapi/perchwell-reso-web-api-openapi.yml#createOpenHouse
+- name: update_open_house
+  description: Update a RESO OpenHouse by OpenHouseKey.
+  source_operation: openapi/perchwell-reso-web-api-openapi.yml#updateOpenHouse
+- name: delete_open_house
+  description: Delete a RESO OpenHouse by OpenHouseKey.
+  source_operation: openapi/perchwell-reso-web-api-openapi.yml#deleteOpenHouse
+- name: delete_media
+  description: Delete a RESO Media record by MediaKey.
+  source_operation: openapi/perchwell-reso-web-api-openapi.yml#deleteMedia

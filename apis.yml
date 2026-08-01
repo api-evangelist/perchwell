@@ -1,27 +1,221 @@
+x-enrichment:
+  date: '2026-07-20'
+  status: minimal
+  artifacts_added: 0
+  pass: local-v1
 aid: perchwell
 name: Perchwell
-description: 'Perchwell is a company surfaced as a portfolio company of lux-capital and added to the API
-  Evangelist network as a stub for enrichment. Sector: real-estate. This profile is a lead awaiting the
-  enrichment pipeline.'
+description: >-
+  Perchwell is a modern, unified MLS (Multiple Listing Service) technology
+  platform used by MLS organizations, brokerages, and real estate agents across
+  the United States. Founded in 2015 and headquartered in New York City,
+  Perchwell provides search, client collaboration, listing add/edit, branded
+  reports, and market analytics on a cloud-native, RESO-certified foundation.
+  For developers and data partners, Perchwell operates three real estate data
+  APIs: a simple token-authenticated JSON API for listing feeds, a RESO Data
+  Dictionary certified RESO Web API (OData 4.01) exposing the standard Property,
+  Member, Office, OpenHouse, and Media resources with full read/write support,
+  and a legacy RETS 1.7 server for backward compatibility. Customers include
+  CRMLS, Baldwin REALTORS, Engel & Volkers, and Keller Williams. Perchwell is
+  SOC 2 compliant and backed by Lux Capital, Founders Fund, and Starwood Capital.
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://perchwell.com/_media/favicon.ico
 url: https://raw.githubusercontent.com/api-evangelist/perchwell/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - lux-capital
+- founders-fund
+- starwood-capital
 x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
 - Real Estate
-apis: []
+- MLS
+- Listings
+- Property Data
+- RESO
+- RETS
+- OData
+- Real Estate Data
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- name: Perchwell RETS API
+  description: >-
+    Legacy RETS 1.7 server (DMQL2 query language) providing backward compatibility for RETS clients, exposing
+    Listing, Agent, Brokerage, Office, and OpenHouse resources via the Search and GetMetadata transactions.
+  humanURL: https://docs.perchwell.com/#/rets_getting_started
+  baseURL: http://rets.perchwell.com:6103
+  properties:
+  - type: GettingStarted
+    url: https://docs.perchwell.com/#/rets_getting_started
+- aid: perchwell:perchwell-listings-api
+  name: Perchwell Listings API
+  description: Real estate sale and rental listing feed.
+  humanURL: https://docs.perchwell.com/#/json_api_getting_started
+  baseURL: https://www.perchwell.com/api/feeds
+  tags:
+  - Listings
+  properties:
+  - type: OpenAPI
+    url: openapi/perchwell-listings-api-openapi.yml
+  - type: GettingStarted
+    url: https://docs.perchwell.com/#/json_api_getting_started
+  - type: GettingStarted
+    url: https://docs.perchwell.com/#/reso_getting_started
+- aid: perchwell:perchwell-media-api
+  name: Perchwell Media API
+  description: RESO Media resource (nested within Property).
+  humanURL: https://docs.perchwell.com/#/json_api_getting_started
+  baseURL: https://www.perchwell.com/api/feeds
+  tags:
+  - Media
+  properties:
+  - type: OpenAPI
+    url: openapi/perchwell-media-api-openapi.yml
+  - type: GettingStarted
+    url: https://docs.perchwell.com/#/json_api_getting_started
+  - type: GettingStarted
+    url: https://docs.perchwell.com/#/reso_getting_started
+- aid: perchwell:perchwell-member-api
+  name: Perchwell Member API
+  description: RESO Member resource (agents).
+  humanURL: https://docs.perchwell.com/#/json_api_getting_started
+  baseURL: https://www.perchwell.com/api/feeds
+  tags:
+  - Member
+  properties:
+  - type: OpenAPI
+    url: openapi/perchwell-member-api-openapi.yml
+  - type: GettingStarted
+    url: https://docs.perchwell.com/#/json_api_getting_started
+  - type: GettingStarted
+    url: https://docs.perchwell.com/#/reso_getting_started
+- aid: perchwell:perchwell-metadata-api
+  name: Perchwell Metadata API
+  description: OData service metadata.
+  humanURL: https://docs.perchwell.com/#/json_api_getting_started
+  baseURL: https://www.perchwell.com/api/feeds
+  tags:
+  - Metadata
+  properties:
+  - type: OpenAPI
+    url: openapi/perchwell-metadata-api-openapi.yml
+  - type: GettingStarted
+    url: https://docs.perchwell.com/#/json_api_getting_started
+  - type: GettingStarted
+    url: https://docs.perchwell.com/#/reso_getting_started
+- aid: perchwell:perchwell-office-api
+  name: Perchwell Office API
+  description: RESO Office resource.
+  humanURL: https://docs.perchwell.com/#/json_api_getting_started
+  baseURL: https://www.perchwell.com/api/feeds
+  tags:
+  - Office
+  properties:
+  - type: OpenAPI
+    url: openapi/perchwell-office-api-openapi.yml
+  - type: GettingStarted
+    url: https://docs.perchwell.com/#/json_api_getting_started
+  - type: GettingStarted
+    url: https://docs.perchwell.com/#/reso_getting_started
+- aid: perchwell:perchwell-openhouse-api
+  name: Perchwell OpenHouse API
+  description: RESO OpenHouse resource.
+  humanURL: https://docs.perchwell.com/#/json_api_getting_started
+  baseURL: https://www.perchwell.com/api/feeds
+  tags:
+  - OpenHouse
+  properties:
+  - type: OpenAPI
+    url: openapi/perchwell-openhouse-api-openapi.yml
+  - type: GettingStarted
+    url: https://docs.perchwell.com/#/json_api_getting_started
+  - type: GettingStarted
+    url: https://docs.perchwell.com/#/reso_getting_started
+- aid: perchwell:perchwell-property-api
+  name: Perchwell Property API
+  description: RESO Property resource (listings; Media is nested).
+  humanURL: https://docs.perchwell.com/#/json_api_getting_started
+  baseURL: https://www.perchwell.com/api/feeds
+  tags:
+  - Property
+  properties:
+  - type: OpenAPI
+    url: openapi/perchwell-property-api-openapi.yml
+  - type: GettingStarted
+    url: https://docs.perchwell.com/#/json_api_getting_started
+  - type: GettingStarted
+    url: https://docs.perchwell.com/#/reso_getting_started
 common:
+- type: AgenticAccess
+  url: agentic-access/perchwell-agentic-access.yml
 - type: Website
   url: https://perchwell.com
+- type: DeveloperPortal
+  url: https://docs.perchwell.com
+- type: Documentation
+  url: https://docs.perchwell.com
+- type: APIReference
+  url: https://docs.perchwell.com
+- type: GettingStarted
+  url: https://docs.perchwell.com/#/json_api_getting_started
+- type: Blog
+  url: https://www.perchwell.com/blog
+- type: Support
+  url: mailto:support@perchwell.com
+- type: GitHubOrganization
+  url: https://github.com/perchwell
+- type: TermsOfService
+  url: https://www.perchwell.com/terms
+- type: PrivacyPolicy
+  url: https://www.perchwell.com/privacy-policy
+- type: Login
+  url: https://www.perchwell.com/accounts/sign_in
+- type: HelpCenter
+  url: http://support.perchwell.com/
+- type: LLMsTxt
+  url: llms/perchwell-llms.txt
+- type: Authentication
+  url: authentication/perchwell-authentication.yml
+- type: Conventions
+  url: conventions/perchwell-conventions.yml
+- type: Conformance
+  url: conformance/perchwell-conformance.yml
+- type: Compliance
+  url: conformance/perchwell-conformance.yml
+- type: DataModel
+  url: data-model/perchwell-data-model.yml
+- type: Lifecycle
+  url: lifecycle/perchwell-lifecycle.yml
+- type: ErrorCatalog
+  url: errors/perchwell-problem-types.yml
+- type: MCPServer
+  url: mcp/perchwell-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Overlay
+  url: overlays/perchwell-json-api-overlay.yaml
+- type: Overlay
+  url: overlays/perchwell-reso-web-api-overlay.yaml
+- type: DomainSecurity
+  url: security/perchwell-domain-security.yml

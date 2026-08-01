@@ -1,0 +1,15 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Perchwell JSON API
+  version: 1.0.0
+extends: openapi/perchwell-json-api-openapi.yml
+actions:
+- target: $.info
+  update:
+    x-apievangelist-enriched: true
+    x-api-category: real-estate-data
+    x-standards: [reso-data-dictionary]
+- target: $.tags
+  update:
+  - name: Listings
+    description: Real estate sale and rental listing feed with incremental sync.

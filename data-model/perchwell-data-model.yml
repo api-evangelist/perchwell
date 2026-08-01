@@ -1,0 +1,54 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/perchwell-reso-web-api-openapi.yml
+docs: https://docs.perchwell.com/#/reso_getting_started
+description: >-
+  Entity-relationship graph derived from Perchwell's RESO Web API resources and
+  their RESO key references. Property is the central listing entity; Member
+  (agent) and Office are related parties; Media is nested within Property;
+  OpenHouse references a Property.
+entities:
+- name: Property
+  key: ListingKey
+  description: RESO Property resource (a listing). Central entity.
+  relationships:
+  - type: belongs_to
+    target: Member
+    via: ListAgentKey
+  - type: belongs_to
+    target: Office
+    via: ListOfficeKey
+  - type: has_many
+    target: Media
+    via: Media (nested, max 100)
+  - type: has_many
+    target: OpenHouse
+    via: ListingKey
+- name: Member
+  key: MemberKey
+  description: RESO Member resource (an agent).
+  relationships:
+  - type: belongs_to
+    target: Office
+    via: OfficeKey
+- name: Office
+  key: OfficeKey
+  description: RESO Office resource.
+  relationships:
+  - type: has_many
+    target: Member
+    via: OfficeKey
+- name: OpenHouse
+  key: OpenHouseKey
+  description: RESO OpenHouse resource.
+  relationships:
+  - type: belongs_to
+    target: Property
+    via: ListingKey
+- name: Media
+  key: MediaKey
+  description: RESO Media resource, nested within Property.
+  relationships:
+  - type: belongs_to
+    target: Property
+    via: ResourceRecordKey

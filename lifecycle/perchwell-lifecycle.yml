@@ -1,0 +1,28 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.perchwell.com
+versioning:
+  reso_web_api:
+    scheme: uri-path
+    current: v2
+    docs: https://docs.perchwell.com/#/reso_getting_started
+  rets_api:
+    scheme: spec-version
+    version: RETS 1.7
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: >-
+    RETS is described as superseded by the RESO Web API as the industry
+    standard; Perchwell continues to operate a RETS 1.7 server for
+    compatibility. No formal per-operation deprecation policy or Sunset/
+    Deprecation header support is documented.
+sla:
+  url: null
+  uptime_target: null
+status_page: null
+support:
+  email: support@perchwell.com
+data_freshness:
+  rets_api: Listing data updates in real time; recommended import interval is 30 minutes.
+deprecated_operations: []

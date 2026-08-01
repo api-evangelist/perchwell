@@ -1,0 +1,31 @@
+# Perchwell
+
+> Perchwell is a modern, unified MLS technology platform used by MLS organizations, brokers, and agents across the United States. Founded in 2015, headquartered in NYC. Customers include CRMLS, Baldwin REALTORS®, Engel & Völkers, and Keller Williams. Great Place to Work Certified 2026.
+
+## Products
+
+- [MLS Platform](https://www.perchwell.com/mls): The modern MLS technology platform for MLS organizations. Enhances the value of the MLS with modern technology including search, collaboration, branded reports, and analytics on a unified, cloud-native, RESO-certified foundation.
+- [For Brokers](https://www.perchwell.com/professionals): Market analytics, branded reports, client collaboration, and listing management for real estate professionals.
+- [Search & Listing Details](https://www.perchwell.com/product/search-and-listing-details): AI-powered MLS search across every data source. Filter inline, save searches with alerts, and share curated listings with clients in minutes.
+- [Client Collaboration](https://www.perchwell.com/product/client-collaboration): One shared workspace for listings, feedback, and messaging. Full parity across web, iOS, and Android.
+- [Add/Edit](https://www.perchwell.com/product/add-edit): AI-powered listing input with real-time compliance, smart autofill, AI-generated descriptions, and full mobile parity.
+- [Reports & Analytics](https://www.perchwell.com/product/reports-analytics): Branded CMAs, interactive market analytics, and client-ready presentations from one unified platform.
+- [Dashboard](https://www.perchwell.com/product/dashboard): Configurable command center for daily workflow. Monitor new inventory, active client needs, and market shifts in one view.
+- [Admin & Configuration](https://www.perchwell.com/product/admin-configuration): Admin tooling for MLSs and brokerages. Assume identity, full audit trails, role and permission configuration.
+
+## Company
+
+- [About Perchwell](https://www.perchwell.com/about): Company background, mission, and approach to building real estate technology with agents.
+- [Careers](https://www.perchwell.com/careers): Open positions in NYC and remote.
+- [Blog](https://www.perchwell.com/blog): Insights on MLS technology, AI, and modern real estate workflows.
+
+## Key facts
+
+- Founded: 2015
+- Headquarters: New York, NY
+- Investors: Lux Capital, Founders Fund, Starwood Capital
+- MLS customers include: CRMLS, Baldwin REALTORS®
+- Brokerage customers: Engel & Völkers, Keller Williams, Baldwin REALTORS®
+- Mobile apps: iOS and Android with full parity to web
+- Standards: RESO-certified Web API, SOC 2 compliant
+- Recognition: Great Place to Work Certified 2026
