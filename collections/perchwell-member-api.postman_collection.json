@@ -1,0 +1,443 @@
+{
+  "item": [
+    {
+      "id": "4f3307d0-3023-4fed-8d33-8303be5b09b6",
+      "name": "Member",
+      "description": {
+        "content": "RESO Member resource (agents).",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "316bfda9-76f4-4a83-a3ad-7dbe751a789b",
+          "name": "Query Member records",
+          "request": {
+            "name": "Query Member records",
+            "description": {},
+            "url": {
+              "path": [
+                "Member"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "$filter",
+                  "value": "<string>",
+                  "description": "OData filter expression restricting returned items."
+                },
+                {
+                  "disabled": false,
+                  "key": "$top",
+                  "value": "10",
+                  "description": "Maximum number of matching items to return (default 10, max 200)."
+                },
+                {
+                  "disabled": false,
+                  "key": "$skip",
+                  "value": "0",
+                  "description": "Number of matching items to skip (default 0)."
+                },
+                {
+                  "disabled": false,
+                  "key": "$select",
+                  "value": "<string>",
+                  "description": "Comma-separated list of resource elements to return."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e4f67ad1-29e2-4aab-8a39-6cccfdc16933",
+              "name": "A collection of Member records.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Member"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$top",
+                      "value": "10"
+                    },
+                    {
+                      "key": "$skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "$select",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"@odata.context\": \"string\",\n  \"@odata.count\": 5604,\n  \"value\": [\n    {\n      \"MemberKey\": \"string\",\n      \"MemberFirstName\": \"string\",\n      \"MemberLastName\": \"string\",\n      \"MemberMiddleName\": \"string\",\n      \"MemberEmail\": \"string\",\n      \"MemberAddress1\": \"string\",\n      \"MemberCity\": \"string\",\n      \"MemberStateOrProvince\": \"string\",\n      \"MemberPostalCode\": \"string\",\n      \"MemberOfficePhone\": \"string\",\n      \"MemberStateLicense\": \"string\",\n      \"MemberStatus\": \"string\",\n      \"OfficeKey\": \"string\",\n      \"ModificationTimestamp\": \"2017-08-21T07:18:48.823Z\"\n    },\n    {\n      \"MemberKey\": \"string\",\n      \"MemberFirstName\": \"string\",\n      \"MemberLastName\": \"string\",\n      \"MemberMiddleName\": \"string\",\n      \"MemberEmail\": \"string\",\n      \"MemberAddress1\": \"string\",\n      \"MemberCity\": \"string\",\n      \"MemberStateOrProvince\": \"string\",\n      \"MemberPostalCode\": \"string\",\n      \"MemberOfficePhone\": \"string\",\n      \"MemberStateLicense\": \"string\",\n      \"MemberStatus\": \"string\",\n      \"OfficeKey\": \"string\",\n      \"ModificationTimestamp\": \"1994-04-01T23:51:05.851Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ec63cf22-fdb6-49b6-8e7b-85585646525b",
+          "name": "Create a Member record",
+          "request": {
+            "name": "Create a Member record",
+            "description": {},
+            "url": {
+              "path": [
+                "Member"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"MemberKey\": \"<string>\",\n  \"MemberFirstName\": \"<string>\",\n  \"MemberLastName\": \"<string>\",\n  \"MemberMiddleName\": \"<string>\",\n  \"MemberEmail\": \"<string>\",\n  \"MemberAddress1\": \"<string>\",\n  \"MemberCity\": \"<string>\",\n  \"MemberStateOrProvince\": \"<string>\",\n  \"MemberPostalCode\": \"<string>\",\n  \"MemberOfficePhone\": \"<string>\",\n  \"MemberStateLicense\": \"<string>\",\n  \"MemberStatus\": \"<string>\",\n  \"OfficeKey\": \"<string>\",\n  \"ModificationTimestamp\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "aa51e81f-25a4-45bc-8902-ee1c23640eed",
+              "name": "Member created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Member"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"MemberKey\": \"<string>\",\n  \"MemberFirstName\": \"<string>\",\n  \"MemberLastName\": \"<string>\",\n  \"MemberMiddleName\": \"<string>\",\n  \"MemberEmail\": \"<string>\",\n  \"MemberAddress1\": \"<string>\",\n  \"MemberCity\": \"<string>\",\n  \"MemberStateOrProvince\": \"<string>\",\n  \"MemberPostalCode\": \"<string>\",\n  \"MemberOfficePhone\": \"<string>\",\n  \"MemberStateLicense\": \"<string>\",\n  \"MemberStatus\": \"<string>\",\n  \"OfficeKey\": \"<string>\",\n  \"ModificationTimestamp\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"MemberKey\": \"<string>\",\n  \"MemberFirstName\": \"<string>\",\n  \"MemberLastName\": \"<string>\",\n  \"MemberMiddleName\": \"<string>\",\n  \"MemberEmail\": \"<string>\",\n  \"MemberAddress1\": \"<string>\",\n  \"MemberCity\": \"<string>\",\n  \"MemberStateOrProvince\": \"<string>\",\n  \"MemberPostalCode\": \"<string>\",\n  \"MemberOfficePhone\": \"<string>\",\n  \"MemberStateLicense\": \"<string>\",\n  \"MemberStatus\": \"<string>\",\n  \"OfficeKey\": \"<string>\",\n  \"ModificationTimestamp\": \"<dateTime>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e40ef7d7-5a17-404a-ba4a-48dec84dd32e",
+          "name": "Get a Member by MemberKey",
+          "request": {
+            "name": "Get a Member by MemberKey",
+            "description": {},
+            "url": {
+              "path": [
+                "Member('{{id}}')"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a11054cc-9ce4-4123-adaf-41088bd2582e",
+              "name": "The Member record.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Member('{{id}}')"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"MemberKey\": \"<string>\",\n  \"MemberFirstName\": \"<string>\",\n  \"MemberLastName\": \"<string>\",\n  \"MemberMiddleName\": \"<string>\",\n  \"MemberEmail\": \"<string>\",\n  \"MemberAddress1\": \"<string>\",\n  \"MemberCity\": \"<string>\",\n  \"MemberStateOrProvince\": \"<string>\",\n  \"MemberPostalCode\": \"<string>\",\n  \"MemberOfficePhone\": \"<string>\",\n  \"MemberStateLicense\": \"<string>\",\n  \"MemberStatus\": \"<string>\",\n  \"OfficeKey\": \"<string>\",\n  \"ModificationTimestamp\": \"<dateTime>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9ee36b6b-35cd-432f-b157-3c8f8e44ffc5",
+          "name": "Update a Member by MemberKey",
+          "request": {
+            "name": "Update a Member by MemberKey",
+            "description": {},
+            "url": {
+              "path": [
+                "Member('{{id}}')"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"MemberKey\": \"<string>\",\n  \"MemberFirstName\": \"<string>\",\n  \"MemberLastName\": \"<string>\",\n  \"MemberMiddleName\": \"<string>\",\n  \"MemberEmail\": \"<string>\",\n  \"MemberAddress1\": \"<string>\",\n  \"MemberCity\": \"<string>\",\n  \"MemberStateOrProvince\": \"<string>\",\n  \"MemberPostalCode\": \"<string>\",\n  \"MemberOfficePhone\": \"<string>\",\n  \"MemberStateLicense\": \"<string>\",\n  \"MemberStatus\": \"<string>\",\n  \"OfficeKey\": \"<string>\",\n  \"ModificationTimestamp\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "658a9d51-7346-4e9a-b1d3-bfb65be706c3",
+              "name": "The updated Member record.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Member('{{id}}')"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"MemberKey\": \"<string>\",\n  \"MemberFirstName\": \"<string>\",\n  \"MemberLastName\": \"<string>\",\n  \"MemberMiddleName\": \"<string>\",\n  \"MemberEmail\": \"<string>\",\n  \"MemberAddress1\": \"<string>\",\n  \"MemberCity\": \"<string>\",\n  \"MemberStateOrProvince\": \"<string>\",\n  \"MemberPostalCode\": \"<string>\",\n  \"MemberOfficePhone\": \"<string>\",\n  \"MemberStateLicense\": \"<string>\",\n  \"MemberStatus\": \"<string>\",\n  \"OfficeKey\": \"<string>\",\n  \"ModificationTimestamp\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"MemberKey\": \"<string>\",\n  \"MemberFirstName\": \"<string>\",\n  \"MemberLastName\": \"<string>\",\n  \"MemberMiddleName\": \"<string>\",\n  \"MemberEmail\": \"<string>\",\n  \"MemberAddress1\": \"<string>\",\n  \"MemberCity\": \"<string>\",\n  \"MemberStateOrProvince\": \"<string>\",\n  \"MemberPostalCode\": \"<string>\",\n  \"MemberOfficePhone\": \"<string>\",\n  \"MemberStateLicense\": \"<string>\",\n  \"MemberStatus\": \"<string>\",\n  \"OfficeKey\": \"<string>\",\n  \"ModificationTimestamp\": \"<dateTime>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.perchwell.com",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) The resource primary key value.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "id"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "c8262630-0bcd-49de-8c6b-ab9c1fe8ec6e",
+    "name": "Perchwell JSON Listings Member API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Perchwell's JSON API provides access to real estate listing data in a format designed for ease of use and speed of development. The API uses simple token authentication and a basic query interface for filtering listings and paginating through results. Faithfully generated by the API Evangelist enrichment pipeline from Perchwell's published API reference (https://docs.perchwell.com/#/json_api_getting_started).\n\nContact Support:\n Name: Perchwell Support\n Email: support@perchwell.com",
+      "type": "text/plain"
+    }
+  }
+}

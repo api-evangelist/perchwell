@@ -1,0 +1,251 @@
+{
+  "item": [
+    {
+      "id": "675d7e98-4863-4222-b073-194efa0bc109",
+      "name": "Office",
+      "description": {
+        "content": "RESO Office resource.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "cd315858-7752-434c-ab4a-cd7f518f6745",
+          "name": "Query Office records",
+          "request": {
+            "name": "Query Office records",
+            "description": {},
+            "url": {
+              "path": [
+                "Office"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "$filter",
+                  "value": "<string>",
+                  "description": "OData filter expression restricting returned items."
+                },
+                {
+                  "disabled": false,
+                  "key": "$top",
+                  "value": "10",
+                  "description": "Maximum number of matching items to return (default 10, max 200)."
+                },
+                {
+                  "disabled": false,
+                  "key": "$skip",
+                  "value": "0",
+                  "description": "Number of matching items to skip (default 0)."
+                },
+                {
+                  "disabled": false,
+                  "key": "$select",
+                  "value": "<string>",
+                  "description": "Comma-separated list of resource elements to return."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9f0e2eba-890e-4f30-8539-855d7a085292",
+              "name": "A collection of Office records.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Office"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$top",
+                      "value": "10"
+                    },
+                    {
+                      "key": "$skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "$select",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"@odata.context\": \"string\",\n  \"@odata.count\": 8300,\n  \"value\": [\n    {\n      \"OfficeKey\": \"string\",\n      \"OfficeName\": \"string\",\n      \"ModificationTimestamp\": \"2000-06-15T07:41:03.383Z\"\n    },\n    {\n      \"OfficeKey\": \"string\",\n      \"OfficeName\": \"string\",\n      \"ModificationTimestamp\": \"1977-09-29T17:54:00.914Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "406717ad-835f-4e0b-ae64-bee9ee0e051c",
+          "name": "Get an Office by OfficeKey",
+          "request": {
+            "name": "Get an Office by OfficeKey",
+            "description": {},
+            "url": {
+              "path": [
+                "Office('{{id}}')"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "70291efa-3c34-433e-bce3-bbfa13be1b49",
+              "name": "The Office record.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Office('{{id}}')"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"OfficeKey\": \"string\",\n  \"OfficeName\": \"string\",\n  \"ModificationTimestamp\": \"1947-03-01T15:40:12.691Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.perchwell.com",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) The resource primary key value.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "id"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "dfda5817-d495-49bb-9817-b9ca223262df",
+    "name": "Perchwell JSON Listings Office API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Perchwell's JSON API provides access to real estate listing data in a format designed for ease of use and speed of development. The API uses simple token authentication and a basic query interface for filtering listings and paginating through results. Faithfully generated by the API Evangelist enrichment pipeline from Perchwell's published API reference (https://docs.perchwell.com/#/json_api_getting_started).\n\nContact Support:\n Name: Perchwell Support\n Email: support@perchwell.com",
+      "type": "text/plain"
+    }
+  }
+}

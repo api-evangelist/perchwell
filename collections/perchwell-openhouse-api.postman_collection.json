@@ -1,0 +1,508 @@
+{
+  "item": [
+    {
+      "id": "c8eb7153-24ea-4681-997c-95eb5bcf185d",
+      "name": "OpenHouse",
+      "description": {
+        "content": "RESO OpenHouse resource.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4efdb483-95bd-419f-937b-4047273734ae",
+          "name": "Query OpenHouse records",
+          "request": {
+            "name": "Query OpenHouse records",
+            "description": {},
+            "url": {
+              "path": [
+                "OpenHouse"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "$filter",
+                  "value": "<string>",
+                  "description": "OData filter expression restricting returned items."
+                },
+                {
+                  "disabled": false,
+                  "key": "$top",
+                  "value": "10",
+                  "description": "Maximum number of matching items to return (default 10, max 200)."
+                },
+                {
+                  "disabled": false,
+                  "key": "$skip",
+                  "value": "0",
+                  "description": "Number of matching items to skip (default 0)."
+                },
+                {
+                  "disabled": false,
+                  "key": "$select",
+                  "value": "<string>",
+                  "description": "Comma-separated list of resource elements to return."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a211ab88-a44e-4ebb-85d9-a5fca72f377c",
+              "name": "A collection of OpenHouse records.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "OpenHouse"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$top",
+                      "value": "10"
+                    },
+                    {
+                      "key": "$skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "$select",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d53d4fdf-4f4a-40ad-9cea-6b2485f3439b",
+          "name": "Create an OpenHouse record",
+          "request": {
+            "name": "Create an OpenHouse record",
+            "description": {},
+            "url": {
+              "path": [
+                "OpenHouse"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"OpenHouseKey\": \"<string>\",\n  \"ListingKey\": \"<string>\",\n  \"ModificationTimestamp\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cae28978-d888-40b5-94a3-ad8e9a8ef035",
+              "name": "OpenHouse created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "OpenHouse"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"OpenHouseKey\": \"<string>\",\n  \"ListingKey\": \"<string>\",\n  \"ModificationTimestamp\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"OpenHouseKey\": \"<string>\",\n  \"ListingKey\": \"<string>\",\n  \"ModificationTimestamp\": \"<dateTime>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "faef8ed8-b503-4fe9-910a-5335726a6e95",
+          "name": "Get an OpenHouse by OpenHouseKey",
+          "request": {
+            "name": "Get an OpenHouse by OpenHouseKey",
+            "description": {},
+            "url": {
+              "path": [
+                "OpenHouse('{{id}}')"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a7a11c18-438f-445c-af9b-58f47bcc30f8",
+              "name": "The OpenHouse record.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "OpenHouse('{{id}}')"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"OpenHouseKey\": \"<string>\",\n  \"ListingKey\": \"<string>\",\n  \"ModificationTimestamp\": \"<dateTime>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c35badbb-db7c-4ba3-8e4c-e7ac74f96266",
+          "name": "Update an OpenHouse by OpenHouseKey",
+          "request": {
+            "name": "Update an OpenHouse by OpenHouseKey",
+            "description": {},
+            "url": {
+              "path": [
+                "OpenHouse('{{id}}')"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"OpenHouseKey\": \"<string>\",\n  \"ListingKey\": \"<string>\",\n  \"ModificationTimestamp\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0394dae6-e197-4ef0-97d6-7d140a2f7770",
+              "name": "The updated OpenHouse record.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "OpenHouse('{{id}}')"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"OpenHouseKey\": \"<string>\",\n  \"ListingKey\": \"<string>\",\n  \"ModificationTimestamp\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"OpenHouseKey\": \"<string>\",\n  \"ListingKey\": \"<string>\",\n  \"ModificationTimestamp\": \"<dateTime>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5717f1e7-09f1-42bc-9159-e826b7892956",
+          "name": "Delete an OpenHouse by OpenHouseKey",
+          "request": {
+            "name": "Delete an OpenHouse by OpenHouseKey",
+            "description": {},
+            "url": {
+              "path": [
+                "OpenHouse('{{id}}')"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9e8ede98-ae4d-4df4-b1c9-2e08179e055e",
+              "name": "OpenHouse deleted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "OpenHouse('{{id}}')"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.perchwell.com",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) The resource primary key value.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "id"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "6fc59f5f-734a-4ee5-aa91-cc3ffa76d9ce",
+    "name": "Perchwell JSON Listings OpenHouse API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Perchwell's JSON API provides access to real estate listing data in a format designed for ease of use and speed of development. The API uses simple token authentication and a basic query interface for filtering listings and paginating through results. Faithfully generated by the API Evangelist enrichment pipeline from Perchwell's published API reference (https://docs.perchwell.com/#/json_api_getting_started).\n\nContact Support:\n Name: Perchwell Support\n Email: support@perchwell.com",
+      "type": "text/plain"
+    }
+  }
+}

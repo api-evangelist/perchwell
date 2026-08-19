@@ -1,0 +1,283 @@
+{
+  "item": [
+    {
+      "id": "9fb23220-7d87-46e0-9403-e91fb7f07455",
+      "name": "Listings",
+      "description": {
+        "content": "Real estate sale and rental listing feed.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "750dc6ad-eba2-4710-99a2-ee34c549f05e",
+          "name": "List listings for an account feed",
+          "request": {
+            "name": "List listings for an account feed",
+            "description": {
+              "content": "Returns listings for the given account feed, filtered by listing type, status, and modification window, with page-based pagination. The response includes a total count and an array of Listing objects.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "feeds",
+                ":account_name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "listing_type",
+                  "value": "sales,rentals",
+                  "description": "Restricts returned listings to sale and/or rental listings."
+                },
+                {
+                  "disabled": false,
+                  "key": "listing_status",
+                  "value": "active,in_contract,expired,closed,perm_off_market,temp_off_market",
+                  "description": "Filters listings by conventional listing statuses (comma-separated): active, in_contract, temp_off_market, perm_off_market, closed, expired, future, lead."
+                },
+                {
+                  "disabled": false,
+                  "key": "updated_since",
+                  "value": "<string>",
+                  "description": "Excludes listings whose updated_at is less than this ISO 8601 value."
+                },
+                {
+                  "disabled": false,
+                  "key": "updated_before",
+                  "value": "<string>",
+                  "description": "Excludes listings whose updated_at is greater than this ISO 8601 value."
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "200",
+                  "description": "Maximum number of listing records returned per response (0-200)."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page offset for pagination (positive integers)."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "account_name",
+                  "description": "(Required) The account name identifying the feed."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cc676ea0-025c-4d77-991f-2a20fd7ee371",
+              "name": "A page of matching listings.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "feeds",
+                    ":account_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "listing_type",
+                      "value": "sales,rentals"
+                    },
+                    {
+                      "key": "listing_status",
+                      "value": "active,in_contract,expired,closed,perm_off_market,temp_off_market"
+                    },
+                    {
+                      "key": "updated_since",
+                      "value": "2015-01-01T10:00:00.000-04:00"
+                    },
+                    {
+                      "key": "updated_before",
+                      "value": "2015-01-01T10:00:00.000-04:00"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "200"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "account_name",
+                      "description": "(Required) The account name identifying the feed."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total\": 184,\n  \"listings\": [\n    {\n      \"id\": 12345,\n      \"location\": {\n        \"address\": \"123 West 45th Street\",\n        \"city\": \"New York\",\n        \"state\": \"NY\",\n        \"zip\": \"10036\",\n        \"place\": \"Theater District\",\n        \"coordinates\": [\n          41.759818,\n          -74.989439\n        ]\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "af8d28d7-a7a5-4a27-96bb-ddb468985aff",
+              "name": "Missing or invalid authentication token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "feeds",
+                    ":account_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "listing_type",
+                      "value": "sales,rentals"
+                    },
+                    {
+                      "key": "listing_status",
+                      "value": "active,in_contract,expired,closed,perm_off_market,temp_off_market"
+                    },
+                    {
+                      "key": "updated_since",
+                      "value": "2015-01-01T10:00:00.000-04:00"
+                    },
+                    {
+                      "key": "updated_before",
+                      "value": "2015-01-01T10:00:00.000-04:00"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "200"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "account_name",
+                      "description": "(Required) The account name identifying the feed."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.perchwell.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "755c641e-00d0-4257-828b-439886ff7159",
+    "name": "Perchwell JSON Listings API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Perchwell's JSON API provides access to real estate listing data in a format designed for ease of use and speed of development. The API uses simple token authentication and a basic query interface for filtering listings and paginating through results. Faithfully generated by the API Evangelist enrichment pipeline from Perchwell's published API reference (https://docs.perchwell.com/#/json_api_getting_started).\n\nContact Support:\n Name: Perchwell Support\n Email: support@perchwell.com",
+      "type": "text/plain"
+    }
+  }
+}

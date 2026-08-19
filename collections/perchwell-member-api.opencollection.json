@@ -1,0 +1,120 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Perchwell JSON Listings Member API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Member",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Query Member records",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.perchwell.com/Member",
+            "params": [
+              {
+                "name": "$filter",
+                "value": "",
+                "type": "query",
+                "description": "OData filter expression restricting returned items."
+              },
+              {
+                "name": "$top",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of matching items to return (default 10, max 200)."
+              },
+              {
+                "name": "$skip",
+                "value": "",
+                "type": "query",
+                "description": "Number of matching items to skip (default 0)."
+              },
+              {
+                "name": "$select",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of resource elements to return."
+              }
+            ]
+          },
+          "docs": "Query Member records"
+        },
+        {
+          "info": {
+            "name": "Create a Member record",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.perchwell.com/Member",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a Member record"
+        },
+        {
+          "info": {
+            "name": "Get a Member by MemberKey",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.perchwell.com/Member(':id')",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The resource primary key value."
+              }
+            ]
+          },
+          "docs": "Get a Member by MemberKey"
+        },
+        {
+          "info": {
+            "name": "Update a Member by MemberKey",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://www.perchwell.com/Member(':id')",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The resource primary key value."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a Member by MemberKey"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

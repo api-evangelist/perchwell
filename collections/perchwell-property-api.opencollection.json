@@ -1,0 +1,120 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Perchwell JSON Listings Property API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Property",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Query Property records",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.perchwell.com/Property",
+            "params": [
+              {
+                "name": "$filter",
+                "value": "",
+                "type": "query",
+                "description": "OData filter expression restricting returned items."
+              },
+              {
+                "name": "$top",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of matching items to return (default 10, max 200)."
+              },
+              {
+                "name": "$skip",
+                "value": "",
+                "type": "query",
+                "description": "Number of matching items to skip (default 0)."
+              },
+              {
+                "name": "$select",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of resource elements to return."
+              }
+            ]
+          },
+          "docs": "Returns Property records matching the OData query parameters."
+        },
+        {
+          "info": {
+            "name": "Create a Property record",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.perchwell.com/Property",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a Property. Requires valid ListAgentKey (Member must exist); ListPrice required, ClosePrice required when StandardStatus is Closed."
+        },
+        {
+          "info": {
+            "name": "Get a Property by ListingKey",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.perchwell.com/Property(':id')",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The resource primary key value."
+              }
+            ]
+          },
+          "docs": "Get a Property by ListingKey"
+        },
+        {
+          "info": {
+            "name": "Update a Property by ListingKey",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://www.perchwell.com/Property(':id')",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The resource primary key value."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Partial update. Any fields omitted remain unchanged; required fields cannot be nulled."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -2,11 +2,9 @@ generated: '2026-07-20'
 method: derived
 status: candidate
 source: openapi/perchwell-reso-web-api-openapi.yml, openapi/perchwell-json-api-openapi.yml
-description: >-
-  Candidate MCP tool list derived from Perchwell's documented API operations.
-  Perchwell does not publish an official hosted MCP server; this is a proposed
-  surface (one tool per operation) for making the real estate data APIs
-  agent-accessible.
+description: Candidate MCP tool list derived from Perchwell's documented API operations. Perchwell does
+  not publish an official hosted MCP server; this is a proposed surface (one tool per operation) for making
+  the real estate data APIs agent-accessible.
 server:
   name: perchwell
   transport: http
@@ -62,3 +60,9 @@ tools:
 - name: delete_media
   description: Delete a RESO Media record by MediaKey.
   source_operation: openapi/perchwell-reso-web-api-openapi.yml#deleteMedia
+deployment:
+  mode: none
+  verified: derived
+  tools: 17
+  checked: '2026-08-12'
+  source: catalog MCP census

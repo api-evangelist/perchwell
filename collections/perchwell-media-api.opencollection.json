@@ -1,0 +1,45 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Perchwell JSON Listings Media API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Media",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Delete a Media record by MediaKey",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://www.perchwell.com/Media(':id')",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The resource primary key value."
+              }
+            ]
+          },
+          "docs": "Delete a Media record by MediaKey"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

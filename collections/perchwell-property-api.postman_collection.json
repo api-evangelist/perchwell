@@ -1,0 +1,452 @@
+{
+  "item": [
+    {
+      "id": "a5fa0900-0355-45f7-adce-6d9a6c6c8085",
+      "name": "Property",
+      "description": {
+        "content": "RESO Property resource (listings; Media is nested).",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "471ecfe2-33e0-4f6d-94b3-7e61ecb1fdae",
+          "name": "Query Property records",
+          "request": {
+            "name": "Query Property records",
+            "description": {
+              "content": "Returns Property records matching the OData query parameters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Property"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "$filter",
+                  "value": "<string>",
+                  "description": "OData filter expression restricting returned items."
+                },
+                {
+                  "disabled": false,
+                  "key": "$top",
+                  "value": "10",
+                  "description": "Maximum number of matching items to return (default 10, max 200)."
+                },
+                {
+                  "disabled": false,
+                  "key": "$skip",
+                  "value": "0",
+                  "description": "Number of matching items to skip (default 0)."
+                },
+                {
+                  "disabled": false,
+                  "key": "$select",
+                  "value": "<string>",
+                  "description": "Comma-separated list of resource elements to return."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d52cc792-1088-4381-815c-bdcb2e41b8ef",
+              "name": "A collection of Property records.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Property"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$top",
+                      "value": "10"
+                    },
+                    {
+                      "key": "$skip",
+                      "value": "0"
+                    },
+                    {
+                      "key": "$select",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"@odata.context\": \"string\",\n  \"@odata.count\": 3913,\n  \"value\": [\n    {\n      \"ListingKey\": \"string\",\n      \"StandardStatus\": \"string\",\n      \"ListPrice\": 6126.435390963187,\n      \"ClosePrice\": 718.2259725879858,\n      \"UnparsedAddress\": \"string\",\n      \"UnitNumber\": \"string\",\n      \"ListAgentKey\": \"string\",\n      \"ListOfficeKey\": \"string\",\n      \"ModificationTimestamp\": \"1997-05-15T01:37:49.779Z\",\n      \"Media\": [\n        {\n          \"MediaKey\": \"string\",\n          \"MediaURL\": \"string\",\n          \"MediaCategory\": \"string\",\n          \"Order\": 4038,\n          \"ResourceName\": \"string\",\n          \"ResourceRecordKey\": \"string\"\n        },\n        {\n          \"MediaKey\": \"string\",\n          \"MediaURL\": \"string\",\n          \"MediaCategory\": \"string\",\n          \"Order\": 5494,\n          \"ResourceName\": \"string\",\n          \"ResourceRecordKey\": \"string\"\n        }\n      ]\n    },\n    {\n      \"ListingKey\": \"string\",\n      \"StandardStatus\": \"string\",\n      \"ListPrice\": 9750.319669598233,\n      \"ClosePrice\": 1157.4372768151443,\n      \"UnparsedAddress\": \"string\",\n      \"UnitNumber\": \"string\",\n      \"ListAgentKey\": \"string\",\n      \"ListOfficeKey\": \"string\",\n      \"ModificationTimestamp\": \"1990-07-16T20:01:07.282Z\",\n      \"Media\": [\n        {\n          \"MediaKey\": \"string\",\n          \"MediaURL\": \"string\",\n          \"MediaCategory\": \"string\",\n          \"Order\": 9324,\n          \"ResourceName\": \"string\",\n          \"ResourceRecordKey\": \"string\"\n        },\n        {\n          \"MediaKey\": \"string\",\n          \"MediaURL\": \"string\",\n          \"MediaCategory\": \"string\",\n          \"Order\": 5942,\n          \"ResourceName\": \"string\",\n          \"ResourceRecordKey\": \"string\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c07cda80-da9f-4513-9563-0d8472fd7d0b",
+          "name": "Create a Property record",
+          "request": {
+            "name": "Create a Property record",
+            "description": {
+              "content": "Creates a Property. Requires valid ListAgentKey (Member must exist); ListPrice required, ClosePrice required when StandardStatus is Closed.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Property"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ListingKey\": \"<string>\",\n  \"StandardStatus\": \"<string>\",\n  \"ListPrice\": \"<number>\",\n  \"ClosePrice\": \"<number>\",\n  \"UnparsedAddress\": \"<string>\",\n  \"UnitNumber\": \"<string>\",\n  \"ListAgentKey\": \"<string>\",\n  \"ListOfficeKey\": \"<string>\",\n  \"ModificationTimestamp\": \"<dateTime>\",\n  \"Media\": [\n    {\n      \"MediaKey\": \"<string>\",\n      \"MediaURL\": \"<string>\",\n      \"MediaCategory\": \"<string>\",\n      \"Order\": \"<integer>\",\n      \"ResourceName\": \"<string>\",\n      \"ResourceRecordKey\": \"<string>\"\n    },\n    {\n      \"MediaKey\": \"<string>\",\n      \"MediaURL\": \"<string>\",\n      \"MediaCategory\": \"<string>\",\n      \"Order\": \"<integer>\",\n      \"ResourceName\": \"<string>\",\n      \"ResourceRecordKey\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "248c71be-9689-4e57-97bc-485b9077baa1",
+              "name": "Property created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Property"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ListingKey\": \"<string>\",\n  \"StandardStatus\": \"<string>\",\n  \"ListPrice\": \"<number>\",\n  \"ClosePrice\": \"<number>\",\n  \"UnparsedAddress\": \"<string>\",\n  \"UnitNumber\": \"<string>\",\n  \"ListAgentKey\": \"<string>\",\n  \"ListOfficeKey\": \"<string>\",\n  \"ModificationTimestamp\": \"<dateTime>\",\n  \"Media\": [\n    {\n      \"MediaKey\": \"<string>\",\n      \"MediaURL\": \"<string>\",\n      \"MediaCategory\": \"<string>\",\n      \"Order\": \"<integer>\",\n      \"ResourceName\": \"<string>\",\n      \"ResourceRecordKey\": \"<string>\"\n    },\n    {\n      \"MediaKey\": \"<string>\",\n      \"MediaURL\": \"<string>\",\n      \"MediaCategory\": \"<string>\",\n      \"Order\": \"<integer>\",\n      \"ResourceName\": \"<string>\",\n      \"ResourceRecordKey\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ListingKey\": \"<string>\",\n  \"StandardStatus\": \"<string>\",\n  \"ListPrice\": \"<number>\",\n  \"ClosePrice\": \"<number>\",\n  \"UnparsedAddress\": \"<string>\",\n  \"UnitNumber\": \"<string>\",\n  \"ListAgentKey\": \"<string>\",\n  \"ListOfficeKey\": \"<string>\",\n  \"ModificationTimestamp\": \"<dateTime>\",\n  \"Media\": [\n    {\n      \"MediaKey\": \"<string>\",\n      \"MediaURL\": \"<string>\",\n      \"MediaCategory\": \"<string>\",\n      \"Order\": \"<integer>\",\n      \"ResourceName\": \"<string>\",\n      \"ResourceRecordKey\": \"<string>\"\n    },\n    {\n      \"MediaKey\": \"<string>\",\n      \"MediaURL\": \"<string>\",\n      \"MediaCategory\": \"<string>\",\n      \"Order\": \"<integer>\",\n      \"ResourceName\": \"<string>\",\n      \"ResourceRecordKey\": \"<string>\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "419da1ae-3383-4154-bc73-f76dbef35548",
+          "name": "Get a Property by ListingKey",
+          "request": {
+            "name": "Get a Property by ListingKey",
+            "description": {},
+            "url": {
+              "path": [
+                "Property('{{id}}')"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "edfd1d1e-42aa-4dc7-82e1-f28bf9cfec78",
+              "name": "The Property record.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Property('{{id}}')"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ListingKey\": \"<string>\",\n  \"StandardStatus\": \"<string>\",\n  \"ListPrice\": \"<number>\",\n  \"ClosePrice\": \"<number>\",\n  \"UnparsedAddress\": \"<string>\",\n  \"UnitNumber\": \"<string>\",\n  \"ListAgentKey\": \"<string>\",\n  \"ListOfficeKey\": \"<string>\",\n  \"ModificationTimestamp\": \"<dateTime>\",\n  \"Media\": [\n    {\n      \"MediaKey\": \"<string>\",\n      \"MediaURL\": \"<string>\",\n      \"MediaCategory\": \"<string>\",\n      \"Order\": \"<integer>\",\n      \"ResourceName\": \"<string>\",\n      \"ResourceRecordKey\": \"<string>\"\n    },\n    {\n      \"MediaKey\": \"<string>\",\n      \"MediaURL\": \"<string>\",\n      \"MediaCategory\": \"<string>\",\n      \"Order\": \"<integer>\",\n      \"ResourceName\": \"<string>\",\n      \"ResourceRecordKey\": \"<string>\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1751df97-93d6-4aa9-a084-9879aa2620c0",
+          "name": "Update a Property by ListingKey",
+          "request": {
+            "name": "Update a Property by ListingKey",
+            "description": {
+              "content": "Partial update. Any fields omitted remain unchanged; required fields cannot be nulled.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Property('{{id}}')"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ListingKey\": \"<string>\",\n  \"StandardStatus\": \"<string>\",\n  \"ListPrice\": \"<number>\",\n  \"ClosePrice\": \"<number>\",\n  \"UnparsedAddress\": \"<string>\",\n  \"UnitNumber\": \"<string>\",\n  \"ListAgentKey\": \"<string>\",\n  \"ListOfficeKey\": \"<string>\",\n  \"ModificationTimestamp\": \"<dateTime>\",\n  \"Media\": [\n    {\n      \"MediaKey\": \"<string>\",\n      \"MediaURL\": \"<string>\",\n      \"MediaCategory\": \"<string>\",\n      \"Order\": \"<integer>\",\n      \"ResourceName\": \"<string>\",\n      \"ResourceRecordKey\": \"<string>\"\n    },\n    {\n      \"MediaKey\": \"<string>\",\n      \"MediaURL\": \"<string>\",\n      \"MediaCategory\": \"<string>\",\n      \"Order\": \"<integer>\",\n      \"ResourceName\": \"<string>\",\n      \"ResourceRecordKey\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "16223178-c422-4ac6-b78a-f20347bf3cd0",
+              "name": "The updated Property record.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Property('{{id}}')"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ListingKey\": \"<string>\",\n  \"StandardStatus\": \"<string>\",\n  \"ListPrice\": \"<number>\",\n  \"ClosePrice\": \"<number>\",\n  \"UnparsedAddress\": \"<string>\",\n  \"UnitNumber\": \"<string>\",\n  \"ListAgentKey\": \"<string>\",\n  \"ListOfficeKey\": \"<string>\",\n  \"ModificationTimestamp\": \"<dateTime>\",\n  \"Media\": [\n    {\n      \"MediaKey\": \"<string>\",\n      \"MediaURL\": \"<string>\",\n      \"MediaCategory\": \"<string>\",\n      \"Order\": \"<integer>\",\n      \"ResourceName\": \"<string>\",\n      \"ResourceRecordKey\": \"<string>\"\n    },\n    {\n      \"MediaKey\": \"<string>\",\n      \"MediaURL\": \"<string>\",\n      \"MediaCategory\": \"<string>\",\n      \"Order\": \"<integer>\",\n      \"ResourceName\": \"<string>\",\n      \"ResourceRecordKey\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ListingKey\": \"<string>\",\n  \"StandardStatus\": \"<string>\",\n  \"ListPrice\": \"<number>\",\n  \"ClosePrice\": \"<number>\",\n  \"UnparsedAddress\": \"<string>\",\n  \"UnitNumber\": \"<string>\",\n  \"ListAgentKey\": \"<string>\",\n  \"ListOfficeKey\": \"<string>\",\n  \"ModificationTimestamp\": \"<dateTime>\",\n  \"Media\": [\n    {\n      \"MediaKey\": \"<string>\",\n      \"MediaURL\": \"<string>\",\n      \"MediaCategory\": \"<string>\",\n      \"Order\": \"<integer>\",\n      \"ResourceName\": \"<string>\",\n      \"ResourceRecordKey\": \"<string>\"\n    },\n    {\n      \"MediaKey\": \"<string>\",\n      \"MediaURL\": \"<string>\",\n      \"MediaCategory\": \"<string>\",\n      \"Order\": \"<integer>\",\n      \"ResourceName\": \"<string>\",\n      \"ResourceRecordKey\": \"<string>\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.perchwell.com",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) The resource primary key value.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "id"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "5f29ced6-c044-4453-bef2-06e4e5f5887c",
+    "name": "Perchwell JSON Listings Property API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Perchwell's JSON API provides access to real estate listing data in a format designed for ease of use and speed of development. The API uses simple token authentication and a basic query interface for filtering listings and paginating through results. Faithfully generated by the API Evangelist enrichment pipeline from Perchwell's published API reference (https://docs.perchwell.com/#/json_api_getting_started).\n\nContact Support:\n Name: Perchwell Support\n Email: support@perchwell.com",
+      "type": "text/plain"
+    }
+  }
+}

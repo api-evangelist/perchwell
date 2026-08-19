@@ -1,0 +1,81 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Perchwell JSON Listings API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Listings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List listings for an account feed",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.perchwell.com/api/feeds/:account_name",
+            "params": [
+              {
+                "name": "account_name",
+                "value": "",
+                "type": "path",
+                "description": "The account name identifying the feed."
+              },
+              {
+                "name": "listing_type",
+                "value": "",
+                "type": "query",
+                "description": "Restricts returned listings to sale and/or rental listings."
+              },
+              {
+                "name": "listing_status",
+                "value": "",
+                "type": "query",
+                "description": "Filters listings by conventional listing statuses (comma-separated): active, in_contract, temp_off_market, perm_off_market, closed, expired, future, lead."
+              },
+              {
+                "name": "updated_since",
+                "value": "",
+                "type": "query",
+                "description": "Excludes listings whose updated_at is less than this ISO 8601 value."
+              },
+              {
+                "name": "updated_before",
+                "value": "",
+                "type": "query",
+                "description": "Excludes listings whose updated_at is greater than this ISO 8601 value."
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of listing records returned per response (0-200)."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page offset for pagination (positive integers)."
+              }
+            ]
+          },
+          "docs": "Returns listings for the given account feed, filtered by listing type, status, and modification window, with page-based pagination. The response includes a total count and an array of Listing objects."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
