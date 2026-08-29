@@ -189,6 +189,9 @@ apis:
   - type: GettingStarted
     url: https://docs.perchwell.com/#/reso_getting_started
 common:
+- type: CapabilityMap
+  url: capabilities/perchwell-capability-edges.yml
+  name: Perchwell Business Capability Map
 - type: AgenticAccess
   url: agentic-access/perchwell-agentic-access.yml
 - type: Website

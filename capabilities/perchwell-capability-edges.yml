@@ -1,0 +1,53 @@
+slug: perchwell
+provider: Perchwell
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Real Estate
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 4
+edges:
+- tag: Property
+  spec_file: perchwell-property-api-openapi.yml
+  capability_id: BC-4960.30
+  capability_id_l1: BC-4960
+  capability_name: Listing Data & MLS Management
+  confidence: 0.86
+  evidence: POST /Property createProperty, 'Get a Property by ListingKey', schemas Property, PropertyCollection,
+    Media
+  reason: Property keyed by ListingKey with Media schema is the RESO listing resource; the API creates
+    and maintains MLS listing data, i.e. Listing Data & MLS Management.
+- tag: Listings
+  spec_file: perchwell-listings-api-openapi.yml
+  capability_id: BC-4960.30
+  capability_id_l1: BC-4960
+  capability_name: Listing Data & MLS Management
+  confidence: 0.85
+  evidence: '"List listings for an account feed"; schemas "Listing", "Agent", "ListingsResponse"; vendor
+    is a "unified MLS (Multiple Listing Service) technology platform"'
+  reason: Operations expose real-estate listing data feeds from a RESO-certified MLS platform, which is
+    listing data / MLS management within brokerage management.
+- tag: OpenHouse
+  spec_file: perchwell-openhouse-api-openapi.yml
+  capability_id: BC-4960.50
+  capability_id_l1: BC-4960
+  capability_name: Showing & Open House Operations
+  confidence: 0.85
+  evidence: POST /OpenHouse createOpenHouse 'Create an OpenHouse record', 'Update an OpenHouse by OpenHouseKey'
+  reason: CRUD over open-house records in an MLS platform maps directly to showing and open-house operations
+    in brokerage/agency service delivery.
+- tag: Media
+  spec_file: perchwell-media-api-openapi.yml
+  capability_id: BC-4960.30
+  capability_id_l1: BC-4960
+  capability_name: Listing Data & MLS Management
+  confidence: 0.75
+  evidence: '"Delete a Media record by MediaKey" on a platform providing "real estate listing data"'
+  reason: Manages listing media records (RESO Media resource) in an MLS platform, matching listing data
+    and media management; thin surface (single delete) lowers confidence.
