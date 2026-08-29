@@ -18,6 +18,18 @@ description: >-
   and a legacy RETS 1.7 server for backward compatibility. Customers include
   CRMLS, Baldwin REALTORS, Engel & Volkers, and Keller Williams. Perchwell is
   SOC 2 compliant and backed by Lux Capital, Founders Fund, and Starwood Capital.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
