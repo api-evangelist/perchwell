@@ -93,11 +93,20 @@ paths:
                 $ref: '#/components/schemas/Member'
 components:
   parameters:
-    id:
-      name: id
-      in: path
-      required: true
-      description: The resource primary key value.
+    top:
+      name: $top
+      in: query
+      required: false
+      description: Maximum number of matching items to return (default 10, max 200).
+      schema:
+        type: integer
+        default: 10
+        maximum: 200
+    select:
+      name: $select
+      in: query
+      required: false
+      description: Comma-separated list of resource elements to return.
       schema:
         type: string
     filter:
@@ -107,11 +116,11 @@ components:
       description: OData filter expression restricting returned items.
       schema:
         type: string
-    select:
-      name: $select
-      in: query
-      required: false
-      description: Comma-separated list of resource elements to return.
+    id:
+      name: id
+      in: path
+      required: true
+      description: The resource primary key value.
       schema:
         type: string
     skip:
@@ -122,15 +131,6 @@ components:
       schema:
         type: integer
         default: 0
-    top:
-      name: $top
-      in: query
-      required: false
-      description: Maximum number of matching items to return (default 10, max 200).
-      schema:
-        type: integer
-        default: 10
-        maximum: 200
   schemas:
     Member:
       type: object

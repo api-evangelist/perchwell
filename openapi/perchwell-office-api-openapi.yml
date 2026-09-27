@@ -54,45 +54,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/Office'
 components:
-  parameters:
-    id:
-      name: id
-      in: path
-      required: true
-      description: The resource primary key value.
-      schema:
-        type: string
-    top:
-      name: $top
-      in: query
-      required: false
-      description: Maximum number of matching items to return (default 10, max 200).
-      schema:
-        type: integer
-        default: 10
-        maximum: 200
-    filter:
-      name: $filter
-      in: query
-      required: false
-      description: OData filter expression restricting returned items.
-      schema:
-        type: string
-    skip:
-      name: $skip
-      in: query
-      required: false
-      description: Number of matching items to skip (default 0).
-      schema:
-        type: integer
-        default: 0
-    select:
-      name: $select
-      in: query
-      required: false
-      description: Comma-separated list of resource elements to return.
-      schema:
-        type: string
   schemas:
     OfficeCollection:
       type: object
@@ -116,6 +77,45 @@ components:
         ModificationTimestamp:
           type: string
           format: date-time
+  parameters:
+    top:
+      name: $top
+      in: query
+      required: false
+      description: Maximum number of matching items to return (default 10, max 200).
+      schema:
+        type: integer
+        default: 10
+        maximum: 200
+    filter:
+      name: $filter
+      in: query
+      required: false
+      description: OData filter expression restricting returned items.
+      schema:
+        type: string
+    select:
+      name: $select
+      in: query
+      required: false
+      description: Comma-separated list of resource elements to return.
+      schema:
+        type: string
+    id:
+      name: id
+      in: path
+      required: true
+      description: The resource primary key value.
+      schema:
+        type: string
+    skip:
+      name: $skip
+      in: query
+      required: false
+      description: Number of matching items to skip (default 0).
+      schema:
+        type: integer
+        default: 0
   securitySchemes:
     bearerAuth:
       type: http

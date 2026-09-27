@@ -103,13 +103,6 @@ paths:
           description: OpenHouse deleted.
 components:
   parameters:
-    id:
-      name: id
-      in: path
-      required: true
-      description: The resource primary key value.
-      schema:
-        type: string
     top:
       name: $top
       in: query
@@ -119,11 +112,25 @@ components:
         type: integer
         default: 10
         maximum: 200
+    select:
+      name: $select
+      in: query
+      required: false
+      description: Comma-separated list of resource elements to return.
+      schema:
+        type: string
     filter:
       name: $filter
       in: query
       required: false
       description: OData filter expression restricting returned items.
+      schema:
+        type: string
+    id:
+      name: id
+      in: path
+      required: true
+      description: The resource primary key value.
       schema:
         type: string
     skip:
@@ -134,13 +141,6 @@ components:
       schema:
         type: integer
         default: 0
-    select:
-      name: $select
-      in: query
-      required: false
-      description: Comma-separated list of resource elements to return.
-      schema:
-        type: string
   schemas:
     OpenHouse:
       type: object

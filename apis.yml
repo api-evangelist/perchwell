@@ -58,7 +58,7 @@ created: '2026-07-17'
 modified: '2026-07-20'
 tags:
 - Company
-- Real-Estate
+- Real Estate
 - MLS
 - Listings
 - Property Data
@@ -76,6 +76,7 @@ tags_raw:
 - RETS
 - OData
 - Real Estate Data
+- Real-Estate
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

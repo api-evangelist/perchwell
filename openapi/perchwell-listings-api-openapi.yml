@@ -129,6 +129,17 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Listing'
+    Agent:
+      type: object
+      properties:
+        first_name:
+          type: string
+        last_name:
+          type: string
+        email:
+          type: string
+        cell_phone:
+          type: string
     Listing:
       type: object
       description: A Perchwell listing with nested detail objects.
@@ -167,17 +178,6 @@ components:
           type: object
         policies:
           type: object
-    Agent:
-      type: object
-      properties:
-        first_name:
-          type: string
-        last_name:
-          type: string
-        email:
-          type: string
-        cell_phone:
-          type: string
   securitySchemes:
     tokenAuth:
       type: apiKey
