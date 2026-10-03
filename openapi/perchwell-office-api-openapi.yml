@@ -55,17 +55,6 @@ paths:
                 $ref: '#/components/schemas/Office'
 components:
   schemas:
-    OfficeCollection:
-      type: object
-      properties:
-        '@odata.context':
-          type: string
-        '@odata.count':
-          type: integer
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/Office'
     Office:
       type: object
       description: RESO Office resource.
@@ -77,35 +66,23 @@ components:
         ModificationTimestamp:
           type: string
           format: date-time
+    OfficeCollection:
+      type: object
+      properties:
+        '@odata.context':
+          type: string
+        '@odata.count':
+          type: integer
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/Office'
   parameters:
-    top:
-      name: $top
-      in: query
-      required: false
-      description: Maximum number of matching items to return (default 10, max 200).
-      schema:
-        type: integer
-        default: 10
-        maximum: 200
-    filter:
-      name: $filter
-      in: query
-      required: false
-      description: OData filter expression restricting returned items.
-      schema:
-        type: string
     select:
       name: $select
       in: query
       required: false
       description: Comma-separated list of resource elements to return.
-      schema:
-        type: string
-    id:
-      name: id
-      in: path
-      required: true
-      description: The resource primary key value.
       schema:
         type: string
     skip:
@@ -116,6 +93,29 @@ components:
       schema:
         type: integer
         default: 0
+    top:
+      name: $top
+      in: query
+      required: false
+      description: Maximum number of matching items to return (default 10, max 200).
+      schema:
+        type: integer
+        default: 10
+        maximum: 200
+    id:
+      name: id
+      in: path
+      required: true
+      description: The resource primary key value.
+      schema:
+        type: string
+    filter:
+      name: $filter
+      in: query
+      required: false
+      description: OData filter expression restricting returned items.
+      schema:
+        type: string
   securitySchemes:
     bearerAuth:
       type: http

@@ -96,34 +96,11 @@ paths:
                 $ref: '#/components/schemas/Property'
 components:
   parameters:
-    top:
-      name: $top
-      in: query
-      required: false
-      description: Maximum number of matching items to return (default 10, max 200).
-      schema:
-        type: integer
-        default: 10
-        maximum: 200
-    filter:
-      name: $filter
-      in: query
-      required: false
-      description: OData filter expression restricting returned items.
-      schema:
-        type: string
     select:
       name: $select
       in: query
       required: false
       description: Comma-separated list of resource elements to return.
-      schema:
-        type: string
-    id:
-      name: id
-      in: path
-      required: true
-      description: The resource primary key value.
       schema:
         type: string
     skip:
@@ -134,34 +111,30 @@ components:
       schema:
         type: integer
         default: 0
+    top:
+      name: $top
+      in: query
+      required: false
+      description: Maximum number of matching items to return (default 10, max 200).
+      schema:
+        type: integer
+        default: 10
+        maximum: 200
+    id:
+      name: id
+      in: path
+      required: true
+      description: The resource primary key value.
+      schema:
+        type: string
+    filter:
+      name: $filter
+      in: query
+      required: false
+      description: OData filter expression restricting returned items.
+      schema:
+        type: string
   schemas:
-    Media:
-      type: object
-      description: RESO Media resource, nested within Property (max 100 per Property).
-      properties:
-        MediaKey:
-          type: string
-        MediaURL:
-          type: string
-        MediaCategory:
-          type: string
-        Order:
-          type: integer
-        ResourceName:
-          type: string
-        ResourceRecordKey:
-          type: string
-    PropertyCollection:
-      type: object
-      properties:
-        '@odata.context':
-          type: string
-        '@odata.count':
-          type: integer
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/Property'
     Property:
       type: object
       description: RESO Property resource.
@@ -189,6 +162,33 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Media'
+    PropertyCollection:
+      type: object
+      properties:
+        '@odata.context':
+          type: string
+        '@odata.count':
+          type: integer
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/Property'
+    Media:
+      type: object
+      description: RESO Media resource, nested within Property (max 100 per Property).
+      properties:
+        MediaKey:
+          type: string
+        MediaURL:
+          type: string
+        MediaCategory:
+          type: string
+        Order:
+          type: integer
+        ResourceName:
+          type: string
+        ResourceRecordKey:
+          type: string
   securitySchemes:
     bearerAuth:
       type: http

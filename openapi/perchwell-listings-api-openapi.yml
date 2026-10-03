@@ -100,35 +100,6 @@ paths:
           description: Missing or invalid authentication token.
 components:
   schemas:
-    Location:
-      type: object
-      properties:
-        address:
-          type: string
-        address_with_unit:
-          type: string
-        city:
-          type: string
-        state:
-          type: string
-        zip:
-          type: string
-        place:
-          type: string
-        coordinates:
-          type: array
-          items:
-            type: number
-    ListingsResponse:
-      type: object
-      properties:
-        total:
-          type: integer
-          description: Total number of records matching the filters, ignoring page_size.
-        listings:
-          type: array
-          items:
-            $ref: '#/components/schemas/Listing'
     Agent:
       type: object
       properties:
@@ -178,6 +149,35 @@ components:
           type: object
         policies:
           type: object
+    ListingsResponse:
+      type: object
+      properties:
+        total:
+          type: integer
+          description: Total number of records matching the filters, ignoring page_size.
+        listings:
+          type: array
+          items:
+            $ref: '#/components/schemas/Listing'
+    Location:
+      type: object
+      properties:
+        address:
+          type: string
+        address_with_unit:
+          type: string
+        city:
+          type: string
+        state:
+          type: string
+        zip:
+          type: string
+        place:
+          type: string
+        coordinates:
+          type: array
+          items:
+            type: number
   securitySchemes:
     tokenAuth:
       type: apiKey
