@@ -103,6 +103,20 @@ components:
       description: Comma-separated list of resource elements to return.
       schema:
         type: string
+    filter:
+      name: $filter
+      in: query
+      required: false
+      description: OData filter expression restricting returned items.
+      schema:
+        type: string
+    id:
+      name: id
+      in: path
+      required: true
+      description: The resource primary key value.
+      schema:
+        type: string
     skip:
       name: $skip
       in: query
@@ -120,21 +134,23 @@ components:
         type: integer
         default: 10
         maximum: 200
-    id:
-      name: id
-      in: path
-      required: true
-      description: The resource primary key value.
-      schema:
-        type: string
-    filter:
-      name: $filter
-      in: query
-      required: false
-      description: OData filter expression restricting returned items.
-      schema:
-        type: string
   schemas:
+    Media:
+      type: object
+      description: RESO Media resource, nested within Property (max 100 per Property).
+      properties:
+        MediaKey:
+          type: string
+        MediaURL:
+          type: string
+        MediaCategory:
+          type: string
+        Order:
+          type: integer
+        ResourceName:
+          type: string
+        ResourceRecordKey:
+          type: string
     Property:
       type: object
       description: RESO Property resource.
@@ -173,22 +189,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Property'
-    Media:
-      type: object
-      description: RESO Media resource, nested within Property (max 100 per Property).
-      properties:
-        MediaKey:
-          type: string
-        MediaURL:
-          type: string
-        MediaCategory:
-          type: string
-        Order:
-          type: integer
-        ResourceName:
-          type: string
-        ResourceRecordKey:
-          type: string
   securitySchemes:
     bearerAuth:
       type: http

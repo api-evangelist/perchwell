@@ -110,6 +110,20 @@ components:
       description: Comma-separated list of resource elements to return.
       schema:
         type: string
+    filter:
+      name: $filter
+      in: query
+      required: false
+      description: OData filter expression restricting returned items.
+      schema:
+        type: string
+    id:
+      name: id
+      in: path
+      required: true
+      description: The resource primary key value.
+      schema:
+        type: string
     skip:
       name: $skip
       in: query
@@ -127,20 +141,6 @@ components:
         type: integer
         default: 10
         maximum: 200
-    id:
-      name: id
-      in: path
-      required: true
-      description: The resource primary key value.
-      schema:
-        type: string
-    filter:
-      name: $filter
-      in: query
-      required: false
-      description: OData filter expression restricting returned items.
-      schema:
-        type: string
   schemas:
     OpenHouse:
       type: object

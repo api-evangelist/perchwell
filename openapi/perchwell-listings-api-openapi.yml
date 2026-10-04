@@ -100,17 +100,35 @@ paths:
           description: Missing or invalid authentication token.
 components:
   schemas:
-    Agent:
+    ListingsResponse:
       type: object
       properties:
-        first_name:
+        total:
+          type: integer
+          description: Total number of records matching the filters, ignoring page_size.
+        listings:
+          type: array
+          items:
+            $ref: '#/components/schemas/Listing'
+    Location:
+      type: object
+      properties:
+        address:
           type: string
-        last_name:
+        address_with_unit:
           type: string
-        email:
+        city:
           type: string
-        cell_phone:
+        state:
           type: string
+        zip:
+          type: string
+        place:
+          type: string
+        coordinates:
+          type: array
+          items:
+            type: number
     Listing:
       type: object
       description: A Perchwell listing with nested detail objects.
@@ -149,35 +167,17 @@ components:
           type: object
         policies:
           type: object
-    ListingsResponse:
+    Agent:
       type: object
       properties:
-        total:
-          type: integer
-          description: Total number of records matching the filters, ignoring page_size.
-        listings:
-          type: array
-          items:
-            $ref: '#/components/schemas/Listing'
-    Location:
-      type: object
-      properties:
-        address:
+        first_name:
           type: string
-        address_with_unit:
+        last_name:
           type: string
-        city:
+        email:
           type: string
-        state:
+        cell_phone:
           type: string
-        zip:
-          type: string
-        place:
-          type: string
-        coordinates:
-          type: array
-          items:
-            type: number
   securitySchemes:
     tokenAuth:
       type: apiKey
