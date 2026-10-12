@@ -1,0 +1,28 @@
+edges:
+- partner_name: RESO
+  partner: reso
+  type: contract
+  channel: network-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://services.reso.org/orgs?showStats=true&showEndorsements=true
+  contract_reference:
+    register: RESO organizations and endorsements (Real Estate Standards Organization)
+    spec_file: null
+    role: Technology Company
+    tier: Certified Current
+    registered_name: Perchwell
+    organization_uoi: T00000009
+    matched_domain: perchwell.com
+    matched_by: domain
+    endorsements:
+    - Web API Core 2.0.0 Certified
+    - Add/Edit 1.0.0 Certified
+    - Data Dictionary 1.7 Certified
+    summary_url: https://certification.reso.org/summary/T00000009
+    detected_by: sweep-real-estate.py
+    detected: '2026-10-13'
+generated: '2026-10-13'
+method: searched
+checked:
+- https://services.reso.org/orgs?showStats=true&showEndorsements=true
