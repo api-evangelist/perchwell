@@ -21,7 +21,7 @@ edges:
     - Data Dictionary 1.7 Certified
     summary_url: https://certification.reso.org/summary/T00000009
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 generated: '2026-10-13'
 method: searched
 checked:
