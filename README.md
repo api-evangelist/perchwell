@@ -64,6 +64,129 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Perchwell is a company surfaced as a portfolio company of lux-capital and added to the API Evangelist network as a stub for enrichment. Sector: real-estate. This profile is a lead awaiting the enrichment pipeline.
+Perchwell is a modern, unified MLS (Multiple Listing Service) technology platform used by MLS organizations, brokerages, and real estate agents across the United States. Founded in 2015 and headquartered in New York City, Perchwell provides search, client collaboration, listing add/edit, branded reports, and market analytics on a cloud-native, RESO-certified foundation. For developers and data partners, Perchwell operates three real estate data APIs: a simple token-authenticated JSON API for listing feeds, a RESO Data Dictionary certified RESO Web API (OData 4.01) exposing the standard Property, Member, Office, OpenHouse, and Media resources with full read/write support, and a legacy RETS 1.7 server for backward compatibility. Customers include CRMLS, Baldwin REALTORS, Engel & Volkers, and Keller Williams. Perchwell is SOC 2 compliant and backed by Lux Capital, Founders Fund, and Starwood Capital.
 
-Backed by: lux-capital — https://perchwell.com
+**Areas:** Company · Real Estate · MLS · Listings · Property Data · RESO · RETS · OData · Real Estate Data
+
+## Perchwell on APIs.io
+
+Everything profiled for Perchwell is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/perchwell/](https://apis.io/providers/perchwell/)** — or go straight to one of the APIs or properties below.
+
+### APIs (8)
+
+- [Perchwell RETS API](https://apis.io/apis/perchwell/perchwell-rets-api/) — Legacy RETS 1.7 server (DMQL2 query language) providing backward compatibility for RETS clients, exposing Listing, Agent, Brokerage, Office, and OpenHouse…
+- [Perchwell Listings API](https://apis.io/apis/perchwell/perchwell-listings-api/) — Real estate sale and rental listing feed.
+- [Perchwell Media API](https://apis.io/apis/perchwell/perchwell-media-api/) — RESO Media resource (nested within Property).
+- [Perchwell Member API](https://apis.io/apis/perchwell/perchwell-member-api/) — RESO Member resource (agents).
+- [Perchwell Metadata API](https://apis.io/apis/perchwell/perchwell-metadata-api/) — OData service metadata.
+- [Perchwell Office API](https://apis.io/apis/perchwell/perchwell-office-api/) — RESO Office resource.
+- [Perchwell OpenHouse API](https://apis.io/apis/perchwell/perchwell-openhouse-api/) — RESO OpenHouse resource.
+- [Perchwell Property API](https://apis.io/apis/perchwell/perchwell-property-api/) — RESO Property resource (listings; Media is nested).
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [perchwell](https://apis.io/servers/perchwell/perchwell/)
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Perchwell Agentic Access](https://apis.io/agentic-access/perchwell/perchwell-agentic-access/)
+
+#### Collections (7)
+
+Postman and Open Collection request collections.
+
+- [Perchwell JSON Listings API](https://apis.io/collections/perchwell/open-perchwell-listings-api/)
+- [Perchwell JSON Listings Media API](https://apis.io/collections/perchwell/open-perchwell-media-api/)
+- [Perchwell JSON Listings Member API](https://apis.io/collections/perchwell/open-perchwell-member-api/)
+- [Perchwell JSON Listings Metadata API](https://apis.io/collections/perchwell/open-perchwell-metadata-api/)
+- [Perchwell JSON Listings Office API](https://apis.io/collections/perchwell/open-perchwell-office-api/)
+- [Perchwell JSON Listings OpenHouse API](https://apis.io/collections/perchwell/open-perchwell-openhouse-api/)
+- [Perchwell JSON Listings Property API](https://apis.io/collections/perchwell/open-perchwell-property-api/)
+
+#### Overlays (2)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Perchwell Json Api Overlay](https://apis.io/overlays/perchwell/perchwell-json-api-overlay/)
+- [Perchwell Reso Web Api Overlay](https://apis.io/overlays/perchwell/perchwell-reso-web-api-overlay/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Perchwell Authentication](https://apis.io/security/perchwell/perchwell-authentication/)
+- [Perchwell Domain Security](https://apis.io/security/perchwell/perchwell-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://perchwell.com)
+- [Documentation](https://docs.perchwell.com)
+- [Getting started](https://docs.perchwell.com/#/json_api_getting_started)
+- [API reference](https://docs.perchwell.com)
+- [Blog](https://www.perchwell.com/blog)
+- [Terms of service](https://www.perchwell.com/terms)
+- [Privacy policy](https://www.perchwell.com/privacy-policy)
+- [GitHub](https://github.com/perchwell)
+
+## API Evangelist rating
+
+**Kin Score 34.7** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 48.6 |
+| Contract governance | 18.2 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 20.8 |
+| Access clarity | 35.5 |
+
+**Agent readiness 21.4** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 29.4** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/perchwell/](https://apis.io/providers/perchwell/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Perchwell: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/perchwell/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
